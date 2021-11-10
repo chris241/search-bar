@@ -1,0 +1,47 @@
+.head{
+    position: relative;
+}
+.blockSearch {
+    position: absolute;
+    margin-left: 100px;
+    top: 15px;
+    padding-left: 34px;
+    height: 15px;
+    z-index: 2;
+}
+.blockSearch:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    background: url(../search.svg) no-repeat;
+    width: 24px;
+    height: 14px;
+    top: 0px;
+    border-right: 2px solid #707070;
+}
+.blockSearch .ch {
+    background: none;
+    border: 0;
+    height: 15px;
+    width: 180px;
+    font-size: 12px;
+    display: block;
+    font-weight: 700;
+    padding: 0 15px 0 0;
+}
+
+.clearSearch {
+    position: absolute;
+    right: 3px;
+    font-size: 11px;
+    bottom: 1px;
+    cursor: pointer;
+    color: #848484;
+}
+.search_result {
+    position: relative;
+    top: 50px;
+    border: 1px solid #EEE;
+    margin: .4rem 1rem;
+    padding: .4rem;
+}
