@@ -21,37 +21,38 @@ const Search = () => {
       );
   };
   const clearText = () => {
-    setText("")
+    setText("");
     fetch("https://jsonplaceholder.typicode.com/posts")
-    .then((response) => response.json())
-    .then((json) => setData(json));
-  }
+      .then((response) => response.json())
+      .then((json) => setData(json));
+  };
   return (
     <div>
-      <div className="head">
-        <div className="blockSearch">
-          <input
-            type="text"
-            className="ch"
-            placeholder="Enter your search"
-            value={text}
-            onChange={(e) => setText(e.target.value)}
-            onKeyDown={handleUserKeyDown}
-          />
-          {text.length > 0 && (
-            <span className="clearSearch" onClick={() => clearText()}>
-              X
-            </span>
-          )}
-        </div>
+      <div className="blockSearch">
+        <input
+          type="text"
+          className="ch"
+          placeholder="Enter your search"
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          onKeyDown={handleUserKeyDown}
+        />
+        {text.length > 0 && (
+          <span className="clearSearch" onClick={() => clearText()}>
+            X
+          </span>
+        )}
       </div>
       <div className="search_result">
-        {data  && data.length !== 0  ? 
+        {data && data.length !== 0 ? (
           data.map((item) => (
             <li key={item.id}>
               {item.id} - {item.title}
             </li>
-          )): <li>NO DATA</li>}
+          ))
+        ) : (
+          <li>NO DATA</li>
+        )}
       </div>
     </div>
   );

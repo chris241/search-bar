@@ -1,6 +1,4 @@
-.head{
-    position: relative;
-}
+
 .blockSearch {
     position: absolute;
     margin-left: 100px;
@@ -19,6 +17,11 @@
     top: 0px;
     border-right: 2px solid #707070;
 }
+
+input {border:0;outline:0;}
+
+input:focus {outline:none!important;}
+
 .blockSearch .ch {
     background: none;
     border: 0;
@@ -29,6 +32,10 @@
     font-weight: 700;
     padding: 0 15px 0 0;
 }
+.ch:focus {
+    border: 0;
+}
+
 
 .clearSearch {
     position: absolute;
